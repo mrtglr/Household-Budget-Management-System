@@ -32,17 +32,7 @@ public class dbtasks {
 			System.out.println("#######################################");
 			System.out.println();
 			loop: while (true) {
-				System.out.println("MENU:");
-				System.out.println("------------------------");
-				System.out.println("1 - List family members");
-				System.out.println("2 - Enter the expense ");
-				System.out.println("3 - Remove extra income");
-				System.out.println("4 - Update house rent");
-				System.out.println("0 - exit");
-				System.out.println("------------------------");
-				System.out.print("Enter a number>");
-				String command = scan.nextLine();
-				int choose = Integer.parseInt(command);
+				String command = waitForReq();
 				if (command.equals("0")) {
 					System.out.println("Bye.");
 					break;
@@ -238,7 +228,11 @@ public class dbtasks {
 					}
 					System.out.println();
 					System.out.print("Continue? (Y/N) >");
+						
+					
 					cont = scan.nextLine();
+						
+				
 					if (cont.toUpperCase().equals("N")) {
 						break loop;
 					}
@@ -290,6 +284,23 @@ public class dbtasks {
 	}
 
 	int breaker = 0;
+	
+	
+	private String waitForReq(){
+		System.out.println("MENU:");
+				System.out.println("------------------------");
+				System.out.println("1 - List family members");
+				System.out.println("2 - Enter the expense ");
+				System.out.println("3 - Remove extra income");
+				System.out.println("4 - Update house rent");
+				System.out.println("0 - exit");
+				System.out.println("------------------------");
+				System.out.print("Enter a number>");
+				String command = scan.nextLine();
+		
+				return command;
+		
+	}
 
 	private static void close() {
 		try {
